@@ -24,10 +24,7 @@ while len(guessed_country) < 40:
         t.write(answer)
 
     if answer == "Exit":
-        missing_countries = []
-        for missing_c in country_names:
-            if missing_c not in guessed_country:
-                missing_countries.append(missing_c)
+        missing_countries = [i for i in country_names if i not in guessed_country] # list Comprehensions For Schleife vereinfachen
         print(f"These country are missing: {missing_countries}")
         print(f"These country are found: {guessed_country}")
         break
